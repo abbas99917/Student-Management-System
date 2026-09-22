@@ -24,6 +24,11 @@ const getUserInputValue = () =>{
     let stdCourse = studentCourse.value
     let stdMarks = studentMarks.value
 
+    if(stdName ==="" || stdAgg === "" || stdCourse === "" || stdMarks === ""){
+        alert("Please Filled The Field First")
+        return;
+    }
+
     if(editId){
         let std = stdArr.find((curElem)=>{
             return curElem.id === editId
@@ -70,12 +75,10 @@ const showStudents  = (student = stdArr) =>{
         <p><strong>Marks:</strong>${curElem.StudentMarks}</p>
         <p><strong>Apply Time: </strong>${curElem.ApplyTime}</p>
     </div>
-
     <div class="card-actions">
         <button class="edit-btn"onclick="editStudent(${curElem.id})">Edit</button>
          <button class="delete-btn"onclick="deleteStudent(${curElem.id})">Delete</button>
     </div>`
-
     studentsContainer.appendChild(stdCard)
 })
 }
