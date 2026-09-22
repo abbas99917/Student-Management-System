@@ -48,6 +48,7 @@ header {
   box-shadow: 0 15px 35px rgba(79, 70, 229, 0.25);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 header h1 {
